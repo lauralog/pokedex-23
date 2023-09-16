@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pokedextheme">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/assets/pokedex-favicon-a7346260.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex GMP</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" crossorigin src="/assets/index-598df690.js"></script>
+    <link rel="stylesheet" href="/assets/index-0e015491.css">
+  </head>
+
+  <body class="app">
+
+    <!-- header -->
+    <div class="header">
+      <div class="header_logo">
+        <span class="logo_icon">
+          <img src="/assets/pokedex-favicon-a7346260.svg" alt="favicon">
+        </span>
+        <span class="logo_title">
+          <h2>Pokedex GMP2223</h2>
+        </span>
+      </div>
+
+      <div class="header_search">
+
+        <form class="search_form">
+          <div class="form_control_searchbox">
+            <label for="pokemon"></label>
+            <input type="text" 
+              name="pokemon" 
+              id="pokesearch"
+              placeholder="Busca un pokemon"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
+              <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
+            </svg>
+          </div>
+
+          <div class="divider"></div>
+          <div class="form_control_buttons">
+            <button type="submit" class="btn-primary">buscar</button>
+            <button type="reset" class="btn-accentñ">reset</button>
+          </div>
+        </form>
+
+      </div>
+    </div><!-- /header -->
+
+    <!-- main -->
+    <div class="main">
+
+      <!-- main_left -->
+      <div class="main_left">
+        <h4 class="side_title">Regiones</h4>
+        <ul class="regions">
+          <li class="region btn btn-secondary" id="btn-kanto">Kanto</li>
+          <li class="region btn btn-secondary" id="btn-johto">Johto</li>
+          <li class="region btn btn-secondary" id="btn-hoenn">Hoenn</li>
+          <li class="region btn btn-secondary" id="btn-sinnoh">Sinnoh</li>
+        </ul>
+
+      </div><!-- /main_left -->
+
+      <!-- main_center -->
+      <div class="main_center">
+
+        <div class="pokemon_response hidden"></div>
+        <div class="pokemon_error hidden"></div>
+
+        <ul class="pokemon_list">
+          <!-- renderAllPokecapsules() -->
+        </ul>
+
+        <div class="pokedetail">
+          <!-- renderPokeDetail() -->
+        </div>
+
+        <div class="loading">
+          loading...
+          <!--  -->
+        </div>
+
+      </div><!-- /main_center -->
+
+      <!-- main_rigth -->
+      <div class="main_right">
+        <div class="battle_sim hidden">
+          <!-- battle-sim.controller() -->
+        </div>
+
+        <div class="types_container">
+          <h4 class="side_title">Tipos</h4>
+
+          <ul class="type_capsules">
+
+            <li class="type_capsule" id="bug">
+              <span class="type_icon bg-bug">
+                <img src="/assets/bug-62047982.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>bug</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="dark">
+              <span class="type_icon bg-dark">
+                <img src="/assets/dark-6cc89a18.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>dark</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="dragon">
+              <span class="type_icon bg-dragon">
+                <img src="/assets/dragon-f01858a4.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>dragon</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="electric">
+              <span class="type_icon bg-electric">
+                <img src="/assets/electric-8e8dc13d.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>electric</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="fire">
+              <span class="type_icon bg-fire">
+                <img src="/assets/fire-11b43235.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>fire</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="fairy">
+              <span class="type_icon bg-fairy">
+                <img src="/assets/fairy-aa38c81f.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>fairy</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="fighting">
+              <span class="type_icon bg-fighting">
+                <img src="/assets/fighting-fe744b5b.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>fighting</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="flying">
+              <span class="type_icon bg-flying">
+                <img src="/assets/flying-e72ad82e.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>flying</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="ghost">
+              <span class="type_icon bg-ghost">
+                <img src="/assets/ghost-0256bef4.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>ghost</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="grass">
+              <span class="type_icon bg-grass">
+                <img src="/assets/grass-032fe743.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>grass</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="ground">
+              <span class="type_icon bg-ground">
+                <img src="/assets/ground-6e15e6a7.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>ground</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="ice">
+              <span class="type_icon bg-ice">
+                <img src="/assets/ice-f266b35f.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>ice</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="normal">
+              <span class="type_icon bg-normal">
+                <img src="/assets/normal-415c8ad4.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>normal</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="poison">
+              <span class="type_icon bg-poison">
+                <img src="/assets/poison-e161a3dc.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>poison</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="psychic">
+              <span class="type_icon bg-psychic">
+                <img src="/assets/psychic-2cb69ede.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>psychic</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="rock">
+              <span class="type_icon bg-rock">
+                <img src="/assets/rock-9bf4db36.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>rock</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="steel">
+              <span class="type_icon bg-steel">
+                <img src="/assets/steel-8e2ed395.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>steel</h4>
+              </span>
+            </li>
+
+            <li class="type_capsule" id="water">
+              <span class="type_icon bg-water">
+                <img src="/assets/water-573b7f1d.svg" alt="type-icon">
+              </span>
+              <span class="type_text">
+                <h4>water</h4>
+              </span>
+            </li>
+
+          </ul>
+        </div>
+
+      </div><!-- /main_rigth -->
+
+    </div><!-- /main -->
+
+    <!-- Script -->
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
+    
+
+  </body>
+</html>
