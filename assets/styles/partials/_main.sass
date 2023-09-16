@@ -1,0 +1,34 @@
+.main
+    @apply w-full h-[100vh] m-auto pt-12
+    // @apply grid grid-cols-[1fr_2.5fr_1fr]
+    @apply flex w-full
+    &>*
+      @apply md:min-w-[256px] 
+
+    .main_center
+      @apply h-full flex-grow px-4 pt-2
+      @apply overflow-scroll flex justify-center
+      @apply bg-light_gray scrollbar-hide
+      .pokemon_list
+        // @apply hidden                    
+        @apply flex flex-col gap-3 items-center
+        @apply w-full p-3 max-w-lg
+        .type_capsule 
+          @apply w-fit p-0
+          .type_text
+              @apply hidden md:flex pr-4
+
+    .main_left
+      @apply hidden px-8 w-fit pt-12 lg:flex flex-col
+      .side_title
+        @apply pb-4
+      ul
+        @apply flex flex-col gap-2
+
+    .main_right
+      @apply hidden lg:flex flex-col 
+      @apply px-8 w-fit h-full pt-12 gap-2
+      .side_title
+        @apply pb-2
+      ul
+        @apply flex flex-col gap-2 overflow-scroll pt-2

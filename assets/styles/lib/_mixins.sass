@@ -1,0 +1,43 @@
+@mixin my_avatar()
+    @apply rounded-full overflow-hidden
+    img
+        @apply object-cover object-center
+        @apply h-full w-full
+    
+@mixin favicon-animation()
+    @apply rotate-[0deg]  
+    &:hover
+        @apply rotate-[calc((360deg*1.5)+45deg)] ease-in-out duration-1000
+    
+    
+    
+    
+    
+    
+    
+    
+// @mixin fs_base() 
+//     font-size: 1rem
+//     line-height: 1.5rem
+
+// @mixin icon()
+//     @apply h-8 w-8
+
+// @mixin btn()
+//     @apply rounded-full text-center 
+//     @apply bg-primary text-white
+
+//     &:disabled
+//         @apply bg-mid_gray
+
+// @mixin img()
+//     @apply overflow-hidden
+//     img
+//         @apply object-cover h-full w-full 
+
+// @mixin rounded-avatar()
+//     @apply h-full w-full
+//     @apply rounded-full overflow-hidden 
+//     img
+//         @apply h-full w-full
+//         @apply object-cover object-center 

@@ -1,0 +1,38 @@
+
+.header
+    @apply absolute top-0 left-0 w-full
+    @apply flex justify-between items-center gap-2
+    @apply px-5 py-2 md:px-7
+    @apply bg-primary text-white
+
+    .header_logo
+        @extend .flex_center
+        @apply flex items-center justify-start gap-2
+        .logo_icon
+            @apply h-full w-[32px] 
+            @include my-avatar()
+            @include favicon-animation()
+        .logo_title
+            @apply hidden md:block
+            // h2
+
+    .header_search    
+        @apply w-fit
+        .search_form
+            @apply flex m-auto
+            .form_control_searchbox 
+                @apply flex m-auto w-full
+                @apply bg-white rounded-full text-mid_gray
+                @apply py-1 px-3 justify-end flex-grow
+                label
+                input
+                svg
+                    @apply fill-mid_gray
+            .divider
+                @apply flex-grow
+            .form_control_buttons
+                @apply hidden sm:flex pl-4
+                @apply w-[calc(256-28)px] justify-end gap-4
+
+    
+

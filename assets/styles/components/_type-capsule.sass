@@ -1,0 +1,21 @@
+.type_capsule
+    @apply w-fit rounded-full h-[28px] pr-0 lg:pr-4
+    @extend .flex_center 
+    @apply pr-4 gap-2 justify-start
+    @apply bg-black text-white
+    .type_icon
+        @apply h-full
+        @include my_avatar()
+        img
+            @apply p-[6px]
+    .type_text
+        // @apply hidden 
+        // md:block md:items-center
+        h4
+            @apply uppercase
+
+.icon_type
+  @apply rounded-full w-fit
+  img 
+    // @include icon
+    @apply w-full 

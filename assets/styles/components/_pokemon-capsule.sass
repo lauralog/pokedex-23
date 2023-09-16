@@ -1,0 +1,33 @@
+.pokecapsule
+    @extend .flex_center 
+    @apply gap-4 bg-white w-full
+    @apply rounded-full border-4 border-white
+    @apply min-w-[64px] pr-8
+    &:hover 
+        @apply border-4 border-primary
+        @apply scale-[105%]
+    .pokecapsule_pic
+        @apply border border-black
+        @apply rounded-full h-full
+        @apply w-[64px] h-[64px] 
+        // md:w-[86px] md:h-[86px]
+        @apply flex justify-center items-center overflow-hidden
+        img
+            @apply p-3
+    .pokecapsule_content
+        @apply py-2 flex-grow
+        @apply flex items-center gap-4 
+        // @apply md:flex-col gap-2 items-start
+        .capsule_data
+            @apply flex items-baseline
+            @apply gap-2
+            // .data_id
+            .data_name
+                @apply text-lg
+        .capsule_types
+            @apply flex w-full gap-2
+            @apply text-white 
+            .type_capsule
+                @apply p-0
+                .type_text
+                    @apply hidden

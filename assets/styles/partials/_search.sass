@@ -1,0 +1,18 @@
+.header_search
+    .search_form
+        @extend .flex_center
+        @apply justify-between 
+        .form_control_searchbox
+            @apply bg-secondary
+            input
+                @apply text-black
+            .form_description
+                @apply hidden lg:flex
+        .form_control_buttons
+            @apply flex gap-4
+            button
+                @apply btn btn-accent 
+                &[type=reset]
+                    @apply btn-outline btn-secondary
+
+
