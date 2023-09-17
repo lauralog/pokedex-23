@@ -10,6 +10,7 @@ import { typeFilterBtns } from "./controllers/types-filter.controller";
 import { renderBattle } from "./controllers/battle-sim.controller";
 
 window.addEventListener('load', (ev) => {
+    setLoadingOn()
     renderPokeCapsules()
 
     renderBattle()
@@ -18,6 +19,7 @@ window.addEventListener('load', (ev) => {
     regionFilterBtns()
     searchPokemon() 
     reloadPage()
+    setLoadingOff()
 })
 
 /**
